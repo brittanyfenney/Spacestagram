@@ -5,23 +5,19 @@ export const Scroll = () => {
   const [photos, setPhotos] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
 
-  const apiKey = "DEMO_KEY"
-
+  const apiKey = process.env.REACT_APP_API_KEY
   const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=10`;
 
   useEffect(() => {
-    console.log('in useEffect getPhotos')
     getPhotos();
   }, []);
 
   useEffect(() => {
-    console.log('in useEffect addEvenListener')
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    console.log('in useEffect isFetching')
     if (isFetching) {
       getPhotos()
       setIsFetching(false)
@@ -29,7 +25,6 @@ export const Scroll = () => {
   }, [isFetching])
 
   async function getPhotos() {
-    console.log('in getPhotos')
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
@@ -40,7 +35,6 @@ export const Scroll = () => {
   }
 
   function handleScroll() {
-    console.log('in handleScroll')
     if (
       window.innerHeight + document.documentElement.scrollTop ===
       document.documentElement.offsetHeight
