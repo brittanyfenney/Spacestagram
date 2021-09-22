@@ -8,6 +8,6 @@ Please view the deployed version at: [https://challenge-spacestagram.herokuapp.c
 
 To view the project locally, first clone the repository.
 
-Install dependencies: npm install
+Install dependencies: `npm install`
 
-Run it locally: npm start
+Run it locally: `npm start`
