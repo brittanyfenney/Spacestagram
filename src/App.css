@@ -47,6 +47,22 @@ h1 {
   padding: 0px 20px 0px 0px;
 }
 
+a {
+  color: black
+}
+
+button {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  color: black;
+  padding: 5px 8px;
+  margin: 0px;
+  text-align: center;
+  text-decoration: none;
+  align-self: center;
+  font-size: 16px;
+}
+
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: 2.5em;
